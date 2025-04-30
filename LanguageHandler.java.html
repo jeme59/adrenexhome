@@ -1,0 +1,477 @@
+<html>
+<head>
+<title>LanguageHandler.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #89ddff;}
+.s3 { color: #9abdf5;}
+.s4 { color: #7dcfff;}
+.s5 { color: #fd914e;}
+.s6 { color: #7aacb7;}
+.s7 { color: #5d6791;}
+.s8 { color: #9dcc65;}
+.s9 { color: #73daca;}
+.s10 { color: #61bdf2;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+LanguageHandler.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">LanguageHandler </span><span class="s3">{</span>
+
+    <span class="s0">public static void </span><span class="s1">handleLanguageChoice</span><span class="s4">(</span><span class="s0">int </span><span class="s1">langChoice</span><span class="s2">, </span><span class="s1">Scanner scan</span><span class="s2">, </span><span class="s0">int </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">String langCode</span><span class="s4">) </span><span class="s3">{</span>
+        <span class="s0">switch </span><span class="s4">(</span><span class="s1">langChoice</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                <span class="s7">// استدعاء دالة اللغة العربية</span>
+                <span class="s1">handleArabicLanguage</span><span class="s4">(</span><span class="s1">scan</span><span class="s2">, </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                <span class="s7">// استدعاء دالة اللغة الإنجليزية</span>
+                <span class="s1">handleEnglishLanguage</span><span class="s4">(</span><span class="s1">scan</span><span class="s2">, </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                <span class="s7">// استدعاء دالة اللغة العبرية</span>
+                <span class="s1">handleHebrewLanguage</span><span class="s4">(</span><span class="s1">scan</span><span class="s2">, </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">default</span><span class="s6">:</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Invalid language choice.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">break</span><span class="s2">;</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+
+    <span class="s0">private static void </span><span class="s1">handleArabicLanguage</span><span class="s4">(</span><span class="s1">Scanner scan</span><span class="s2">, </span><span class="s0">int </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">String langCode</span><span class="s4">) </span><span class="s3">{</span>
+        <span class="s0">if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">1</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// إنشاء حساب جديد باللغة العربية</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;أدخل الايميل: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;هل أنت ذكر أم أنثى؟ (m/f): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String gender </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;هل تفضل التمارين الحرة أم الأجهزة؟ (حرة/أجهزة): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String trainingType </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;كم يوم في الأسبوع تستطيع التمرن؟ &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">workoutDays </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">; </span><span class="s7">// للتأكد من إزالة الفاصل بعد العدد</span>
+
+            <span class="s1">WeeklyProgram weeklyProgram </span><span class="s6">= </span><span class="s0">new </span><span class="s1">WeeklyProgram</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">showProgramForDays</span><span class="s4">(</span><span class="s1">workoutDays</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// حفظ البروفايل</span>
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s0">new </span><span class="s1">UserProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">workoutDays</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">profile</span><span class="s2">.</span><span class="s1">setSchedule</span><span class="s4">(</span><span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">())</span><span class="s2">;</span>
+            <span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">saveProfile</span><span class="s4">(</span><span class="s1">profile</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;تم حفظ حسابك بنجاح ✅&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// 💪 عرض التمارين</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;هل ترغب بعرض تمارين اليوم؟ (نعم/لا): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String viewWorkouts </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">viewWorkouts</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;نعم&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3 </span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 اقتراحات لأنظمة التمرين المناسبة لك:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Full Body&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Push / Pull / Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Upper / Lower&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;اختر نظام التمرين: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;خيار غير صالح&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+                <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">4 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">6</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💪 تقسيمات التمرين المقترحة:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. صدر + تراي&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. ظهر + باي&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. أرجل&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;4. كتف&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;اختر رقم التمرين: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showWorkoutByChoice</span><span class="s4">(</span><span class="s1">workoutChoice</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+                <span class="s0">else </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;امعط&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">}</span>
+        <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">2</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// تسجيل الدخول باللغة العربية</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;أدخل الإيميل: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">loadProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">profile </span><span class="s6">== </span><span class="s0">null</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;لم يتم العثور على الحساب، الرجاء إنشاء حساب أولاً.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">return</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;مرحبًا &quot; </span><span class="s6">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getEmail</span><span class="s4">() </span><span class="s6">+ </span><span class="s8">&quot; 👋&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;معك الكوتش جيمي.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;الجدول الأسبوعي الخاص بك:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">String</span><span class="s9">[] </span><span class="s1">schedule </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">schedule </span><span class="s6">!= </span><span class="s0">null </span><span class="s6">&amp;&amp; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length </span><span class="s6">&gt; </span><span class="s5">0</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s0">for </span><span class="s4">(</span><span class="s0">int </span><span class="s1">i </span><span class="s6">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s6">&lt; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s6">++</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;اليوم &quot; </span><span class="s6">+ </span><span class="s4">(</span><span class="s1">i </span><span class="s6">+ </span><span class="s5">1</span><span class="s4">) </span><span class="s6">+ </span><span class="s8">&quot;: &quot; </span><span class="s6">+ </span><span class="s1">schedule</span><span class="s9">[</span><span class="s1">i</span><span class="s9">]</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">} </span><span class="s0">else </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;الجدول فارغ.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;هل ترغب بعرض التمارين لليوم؟ (نعم/لا): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String answer </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">answer</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;نعم&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 اقتراحات لأنظمة التمرين المناسبة لك:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Full Body&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Push / Pull / Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Upper / Lower&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;---------------------------------&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;اختر نظام التمرين الذي تفضله (اكتب الرقم): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥 اخترت نظام Full Body. هذه التمارين:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥 اخترت نظام Push / Pull / Legs. هذه التمارين:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥 اخترت نظام Upper / Lower. هذه التمارين:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;خيار غير صحيح، سيتم عرض قائمة التمارين العامة.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+                <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">4 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">6</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💪 تقسيمات التمرين المقترحة:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. صدر + تراي&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. ظهر + باي&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. أرجل&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;4. كتف&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;اختر رقم التمرين: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showWorkoutByChoice</span><span class="s4">(</span><span class="s1">workoutChoice</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">}</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+
+    <span class="s0">private static void </span><span class="s1">handleEnglishLanguage</span><span class="s4">(</span><span class="s1">Scanner scan</span><span class="s2">, </span><span class="s0">int </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">String langCode</span><span class="s4">) </span><span class="s3">{</span>
+        <span class="s0">if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">1</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// Create account in English</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Enter email: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Are you male or female? (m/f): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String gender </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Do you prefer free weights or machines? (Free/Machines): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String trainingType </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;How many days per week can you train? &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">workoutDays </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">; </span><span class="s7">// To remove the line separator</span>
+
+            <span class="s1">WeeklyProgram weeklyProgram </span><span class="s6">= </span><span class="s0">new </span><span class="s1">WeeklyProgram</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">showProgramForDays</span><span class="s4">(</span><span class="s1">workoutDays</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// Save profile</span>
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s0">new </span><span class="s1">UserProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">workoutDays</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">profile</span><span class="s2">.</span><span class="s1">setSchedule</span><span class="s4">(</span><span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">())</span><span class="s2">;</span>
+            <span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">saveProfile</span><span class="s4">(</span><span class="s1">profile</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Your account has been successfully saved ✅&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// 💪 Show workouts</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Would you like to view today's workouts? (Yes/No): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String viewWorkouts </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">viewWorkouts</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;Yes&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3 </span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 Suggested workout systems for you:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Full Body&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Push / Pull / Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Upper / Lower&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Choose a workout system: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Invalid choice&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+
+                <span class="s3">}</span>
+                <span class="s0">else if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">4 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">6</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💪 Suggested workout splits:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Chest + triceps&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Back + biceps&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;4. Shoulders&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Choose your workout number: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showWorkoutByChoice</span><span class="s4">(</span><span class="s1">workoutChoice</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+
+            <span class="s3">}</span>
+        <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">2</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// log in E</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Enter email :&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">loadProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">profile </span><span class="s6">== </span><span class="s0">null</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Account not found, please create an account first.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">return</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;HI ! &quot; </span><span class="s6">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getEmail</span><span class="s4">() </span><span class="s6">+ </span><span class="s8">&quot; 👋&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Coach Jimmy is with you.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Your weekly schedule:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">String</span><span class="s9">[] </span><span class="s1">schedule </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">schedule </span><span class="s6">!= </span><span class="s0">null </span><span class="s6">&amp;&amp; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length </span><span class="s6">&gt; </span><span class="s5">0</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s0">for </span><span class="s4">(</span><span class="s0">int </span><span class="s1">i </span><span class="s6">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s6">&lt; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s6">++</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;today &quot; </span><span class="s6">+ </span><span class="s4">(</span><span class="s1">i </span><span class="s6">+ </span><span class="s5">1</span><span class="s4">) </span><span class="s6">+ </span><span class="s8">&quot;: &quot; </span><span class="s6">+ </span><span class="s1">schedule</span><span class="s9">[</span><span class="s1">i</span><span class="s9">]</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">} </span><span class="s0">else </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;The table is empty.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Would you like to view today's exercises? (Yes/No): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String answer </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">answer</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;Yes&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 Suggestions for exercise regimens that are right for you:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Full Body&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Push / Pull / Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Upper / Lower&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;---------------------------------&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Choose your preferred exercise regimen (type number): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥you chose the Full Body system. These exercises:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥you chose the Push/Pull/Legs system. These exercises:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥 you chose the Upper/Lower system. These exercises:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;Incorrect option, the general exercise list will be displayed.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+                <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">4 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">6</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💪 Suggested workout splits:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1.Chest + triceps&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Back + biceps &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;4. shoulder&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;Choose your workout number: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showWorkoutByChoice</span><span class="s4">(</span><span class="s1">workoutChoice</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">}</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+
+    <span class="s0">private static void </span><span class="s1">handleHebrewLanguage</span><span class="s4">(</span><span class="s1">Scanner scan</span><span class="s2">, </span><span class="s0">int </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">String langCode</span><span class="s4">) </span><span class="s3">{</span>
+        <span class="s0">if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">1</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// Create account in Hebrew (same as English)</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;הזן דוא</span><span class="s10">\&quot;</span><span class="s8">ל: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;האם אתה גבר או אישה? (ז/נ): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String gender </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;האם אתה מעדיף משקולות חופשיות או מכונות? (חופשי/מכונה): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String trainingType </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;כמה ימים בשבוע אתה יכול להתאמן? &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">workoutDays </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">; </span><span class="s7">// To remove the line separator</span>
+
+            <span class="s1">WeeklyProgram weeklyProgram </span><span class="s6">= </span><span class="s0">new </span><span class="s1">WeeklyProgram</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">showProgramForDays</span><span class="s4">(</span><span class="s1">workoutDays</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// Save profile</span>
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s0">new </span><span class="s1">UserProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">workoutDays</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">profile</span><span class="s2">.</span><span class="s1">setSchedule</span><span class="s4">(</span><span class="s1">weeklyProgram</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">())</span><span class="s2">;</span>
+            <span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">saveProfile</span><span class="s4">(</span><span class="s1">profile</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;החשבון שלך נשמר בהצלחה ✅&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s7">// 💪 Show workouts</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;האם תרצה לראות את האימונים להיום? (כן/לא): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String viewWorkouts </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">viewWorkouts</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;כן&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3 </span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 הצעות לאימוני מערכת עבורך:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. גוף מלא&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. דחיפה / משיכה / רגליים&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. עליון / תחתון&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;בחר מערכת אימון: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;בחירה לא נכונה&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+                <span class="s3">}</span>
+            <span class="s3">}</span>
+        <span class="s3">}</span><span class="s0">else if </span><span class="s4">(</span><span class="s1">userAction </span><span class="s6">== </span><span class="s5">2</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s7">// log in H</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;הזן אימייל &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String email </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s1">UserProfile profile </span><span class="s6">= </span><span class="s1">UserProfileManager</span><span class="s2">.</span><span class="s1">loadProfile</span><span class="s4">(</span><span class="s1">email</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">profile </span><span class="s6">== </span><span class="s0">null</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;החשבון לא נמצא, אנא צור חשבון תחילה.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s0">return</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;היי ! &quot; </span><span class="s6">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getEmail</span><span class="s4">() </span><span class="s6">+ </span><span class="s8">&quot; 👋&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;המאמן ג'ימי איתך.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;לוח הזמנים השבועי שלך:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+            <span class="s1">String</span><span class="s9">[] </span><span class="s1">schedule </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">schedule </span><span class="s6">!= </span><span class="s0">null </span><span class="s6">&amp;&amp; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length </span><span class="s6">&gt; </span><span class="s5">0</span><span class="s4">) </span><span class="s3">{</span>
+                <span class="s0">for </span><span class="s4">(</span><span class="s0">int </span><span class="s1">i </span><span class="s6">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s6">&lt; </span><span class="s1">schedule</span><span class="s2">.</span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s6">++</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;הַיוֹם &quot; </span><span class="s6">+ </span><span class="s4">(</span><span class="s1">i </span><span class="s6">+ </span><span class="s5">1</span><span class="s4">) </span><span class="s6">+ </span><span class="s8">&quot;: &quot; </span><span class="s6">+ </span><span class="s1">schedule</span><span class="s9">[</span><span class="s1">i</span><span class="s9">]</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">} </span><span class="s0">else </span><span class="s3">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;השולחן ריק.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s3">}</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;האם תרצה לראות את התרגילים של היום? (כן/לא): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">String answer </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+            <span class="s0">if </span><span class="s4">(</span><span class="s1">answer</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s4">(</span><span class="s8">&quot;כן&quot;</span><span class="s4">)) </span><span class="s3">{</span>
+                <span class="s0">int </span><span class="s1">days </span><span class="s6">= </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s4">()</span><span class="s2">;</span>
+
+                <span class="s0">if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">1 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">3</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💡 הצעות למשטרי פעילות גופנית המתאימים לך:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1. Full Body&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Push / Pull / Legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. Upper / Lower&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;---------------------------------&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;בחר את משטר האימון המועדף עליך (מספר סוג): &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">systemChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s0">switch </span><span class="s4">(</span><span class="s1">systemChoice</span><span class="s4">) </span><span class="s3">{</span>
+                        <span class="s0">case </span><span class="s5">1</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥בחרת במערכת Full Body. התרגילים האלה:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showFullBody</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">2</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥בחרת במערכת דחיפה/משיכה/רגליים. התרגילים האלה&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showPushPullLegs</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">case </span><span class="s5">3</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;🔥 בחרת במערכת העליונה/תחתונה. התרגילים האלה:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showUpperLower</span><span class="s4">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                            <span class="s0">break</span><span class="s2">;</span>
+                        <span class="s0">default</span><span class="s6">:</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;אפשרות שגויה, רשימת התרגילים הכללית תוצג.&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s3">}</span>
+                <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">days </span><span class="s6">&gt;= </span><span class="s5">4 </span><span class="s6">&amp;&amp; </span><span class="s1">days </span><span class="s6">&lt;= </span><span class="s5">6</span><span class="s4">) </span><span class="s3">{</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;💪 חלוקות אימון מוצעות:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;1.Chest + triceps&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;2. Back + biceps &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;3. legs&quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s8">&quot;4. shoulder&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s4">(</span><span class="s8">&quot;בחר את מספר האימון שלך: &quot;</span><span class="s4">)</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+                    <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+                    <span class="s1">WorkoutLibrary</span><span class="s2">.</span><span class="s1">showWorkoutByChoice</span><span class="s4">(</span><span class="s1">workoutChoice</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s4">()</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s4">()</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+                <span class="s3">}</span>
+            <span class="s3">}</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+</pre>
+</body>
+</html>

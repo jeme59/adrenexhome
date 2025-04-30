@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Messages.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #9abdf5;}
+.s3 { color: #89ddff;}
+.s4 { color: #7dcfff;}
+.s5 { color: #7aacb7;}
+.s6 { color: #9dcc65;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Messages.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Messages </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String language</span><span class="s3">;</span>
+
+    <span class="s0">public </span><span class="s1">Messages</span><span class="s4">(</span><span class="s1">String language</span><span class="s4">) </span><span class="s2">{</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">language </span><span class="s5">= </span><span class="s1">language</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getAccountUpdatedMessage</span><span class="s4">() </span><span class="s2">{</span>
+        <span class="s0">switch </span><span class="s4">(</span><span class="s1">language</span><span class="s4">) </span><span class="s2">{</span>
+            <span class="s0">case </span><span class="s6">&quot;ar&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ تم تحديث الحساب بنجاح.&quot;</span><span class="s3">;</span>
+            <span class="s0">case </span><span class="s6">&quot;en&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ Account updated successfully.&quot;</span><span class="s3">;</span>
+            <span class="s0">case </span><span class="s6">&quot;he&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ החשבון עודכן בהצלחה.&quot;</span><span class="s3">;</span>
+            <span class="s0">default</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ Account updated.&quot;</span><span class="s3">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getAccountCreatedMessage</span><span class="s4">() </span><span class="s2">{</span>
+        <span class="s0">switch </span><span class="s4">(</span><span class="s1">language</span><span class="s4">) </span><span class="s2">{</span>
+            <span class="s0">case </span><span class="s6">&quot;ar&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ تم إنشاء حساب جديد.&quot;</span><span class="s3">;</span>
+            <span class="s0">case </span><span class="s6">&quot;en&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ New account created.&quot;</span><span class="s3">;</span>
+            <span class="s0">case </span><span class="s6">&quot;he&quot;</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ נוצר חשבון חדש.&quot;</span><span class="s3">;</span>
+            <span class="s0">default</span><span class="s5">:</span>
+                <span class="s0">return </span><span class="s6">&quot;✅ New account created.&quot;</span><span class="s3">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

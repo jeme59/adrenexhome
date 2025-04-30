@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>UserProfile.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #9abdf5;}
+.s3 { color: #89ddff;}
+.s4 { color: #73daca;}
+.s5 { color: #7dcfff;}
+.s6 { color: #7aacb7;}
+.s7 { color: #5d6791;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UserProfile.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">UserProfile </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String email</span><span class="s3">;</span>
+    <span class="s0">private </span><span class="s1">String gender</span><span class="s3">;</span>
+    <span class="s0">private </span><span class="s1">String trainingType</span><span class="s3">;</span>
+    <span class="s0">private int </span><span class="s1">workoutDays</span><span class="s3">;</span>
+    <span class="s0">private </span><span class="s1">String</span><span class="s4">[] </span><span class="s1">schedule</span><span class="s3">;</span>
+
+    <span class="s0">public </span><span class="s1">UserProfile</span><span class="s5">(</span><span class="s1">String email</span><span class="s3">, </span><span class="s1">String gender</span><span class="s3">, </span><span class="s1">String trainingType</span><span class="s3">, </span><span class="s0">int </span><span class="s1">workoutDays</span><span class="s5">) </span><span class="s2">{</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">email </span><span class="s6">= </span><span class="s1">email</span><span class="s3">;</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">gender </span><span class="s6">= </span><span class="s1">gender</span><span class="s3">;</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">trainingType </span><span class="s6">= </span><span class="s1">trainingType</span><span class="s3">;</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">workoutDays </span><span class="s6">= </span><span class="s1">workoutDays</span><span class="s3">;</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">schedule </span><span class="s6">= </span><span class="s0">new </span><span class="s1">String</span><span class="s4">[</span><span class="s1">workoutDays</span><span class="s4">]</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getEmail</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">email</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getGender</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">gender</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getTrainingType</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">trainingType</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getWorkoutDays</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">workoutDays</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String</span><span class="s4">[] </span><span class="s1">getSchedule</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">schedule</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setSchedule</span><span class="s5">(</span><span class="s1">String</span><span class="s4">[] </span><span class="s1">schedule</span><span class="s5">) </span><span class="s2">{</span>
+        <span class="s0">this</span><span class="s3">.</span><span class="s1">schedule </span><span class="s6">= </span><span class="s1">schedule</span><span class="s3">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+
+
+
+
+<span class="s7">//public class UserProfile {</span>
+<span class="s7">//    private String email;</span>
+<span class="s7">//    private String gender;</span>
+<span class="s7">//    private String trainingType;</span>
+<span class="s7">//    private int workoutDays;</span>
+<span class="s7">//    private String[] schedule;</span>
+<span class="s7">//</span>
+<span class="s7">//    public UserProfile(String email, String gender, String trainingType, int workoutDays) {</span>
+<span class="s7">//        this.email = email;</span>
+<span class="s7">//        this.gender = gender;</span>
+<span class="s7">//        this.trainingType = trainingType;</span>
+<span class="s7">//        this.workoutDays = workoutDays;</span>
+<span class="s7">//        this.schedule = new String[workoutDays];</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    // Getter and Setter Methods</span>
+<span class="s7">//    public String getEmail() {</span>
+<span class="s7">//        return email;</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    public String getGender() {</span>
+<span class="s7">//        return gender;</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    public String getTrainingType() {</span>
+<span class="s7">//        return trainingType;</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    public int getWorkoutDays() {</span>
+<span class="s7">//        return workoutDays;</span>
+<span class="s7">//</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    public void setSchedule(String[] schedule) {</span>
+<span class="s7">//        this.schedule = schedule;</span>
+<span class="s7">//    }</span>
+<span class="s7">//</span>
+<span class="s7">//    public String[] getSchedule() {</span>
+<span class="s7">//        return schedule;</span>
+<span class="s7">//    }</span>
+<span class="s7">//}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>WeeklyProgram.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #9abdf5;}
+.s3 { color: #73daca;}
+.s4 { color: #89ddff;}
+.s5 { color: #7dcfff;}
+.s6 { color: #fd914e;}
+.s7 { color: #7aacb7;}
+.s8 { color: #9dcc65;}
+.s9 { color: #5d6791;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WeeklyProgram.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">WeeklyProgram </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String</span><span class="s3">[] </span><span class="s1">schedule</span><span class="s4">;</span>
+
+    <span class="s0">public void </span><span class="s1">showProgramForDays</span><span class="s5">(</span><span class="s0">int </span><span class="s1">days</span><span class="s4">, </span><span class="s1">String langCode</span><span class="s5">) </span><span class="s2">{</span>
+        <span class="s0">switch </span><span class="s5">(</span><span class="s1">days</span><span class="s5">) </span><span class="s2">{</span>
+            <span class="s0">case </span><span class="s6">1</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;full body&quot; </span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;גוף מלא&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{ </span><span class="s8">&quot;جسم كامل  &quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+            <span class="s0">case </span><span class="s6">2</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;upper&quot;</span><span class="s4">,</span><span class="s8">&quot;lower&quot; </span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;פלג גוף תחתון&quot;</span><span class="s4">,</span><span class="s8">&quot;עֶלִיוֹן&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{ </span><span class="s8">&quot;جسم سفلي &quot;</span><span class="s4">, </span><span class="s8">&quot;جسم علوي&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+            <span class="s0">case </span><span class="s6">3</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;push&quot;</span><span class="s4">, </span><span class="s8">&quot;pull&quot;</span><span class="s4">, </span><span class="s8">&quot;Legs&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;לִדחוֹף&quot;</span><span class="s4">,</span><span class="s8">&quot;מְשׁוֹך&quot;</span><span class="s4">,</span><span class="s8">&quot;רגליים&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;رجل&quot;</span><span class="s4">, </span><span class="s8">&quot;سحب&quot;</span><span class="s4">, </span><span class="s8">&quot;دفع&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+
+            <span class="s0">case </span><span class="s6">4</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;Chest + Triceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Back + Biceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Legs&quot;</span><span class="s4">, </span><span class="s8">&quot;Shoulders&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;חזה + תלת ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;גב + דו ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;רגליים&quot;</span><span class="s4">, </span><span class="s8">&quot;כתפיים&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;صدر+تراي&quot;</span><span class="s4">, </span><span class="s8">&quot;ظهر+باي&quot;</span><span class="s4">, </span><span class="s8">&quot;رجل&quot;</span><span class="s4">, </span><span class="s8">&quot;كتف&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+            <span class="s0">case </span><span class="s6">5</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;Chest + Triceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Back + Biceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Legs&quot;</span><span class="s4">, </span><span class="s8">&quot;Shoulders&quot;</span><span class="s4">, </span><span class="s8">&quot;Cardio + Abs&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;חזה + תלת ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;גב + דו ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;רגליים&quot;</span><span class="s4">, </span><span class="s8">&quot;כתפיים&quot;</span><span class="s4">, </span><span class="s8">&quot;קרדיו + בטן&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;صدر+تراي&quot;</span><span class="s4">, </span><span class="s8">&quot;ظهر+باي&quot;</span><span class="s4">, </span><span class="s8">&quot;رجل&quot;</span><span class="s4">, </span><span class="s8">&quot;كتف&quot;</span><span class="s4">, </span><span class="s8">&quot;كارديو+معدة&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+            <span class="s0">case </span><span class="s6">6</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;Chest + Triceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Back + Biceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Legs&quot;</span><span class="s4">, </span><span class="s8">&quot;Shoulders&quot;</span><span class="s4">, </span><span class="s8">&quot;Chest + Triceps&quot;</span><span class="s4">, </span><span class="s8">&quot;Cardio + Abs&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;חזה + תלת ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;גב + דו ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;רגליים&quot;</span><span class="s4">, </span><span class="s8">&quot;כתפיים&quot;</span><span class="s4">, </span><span class="s8">&quot;חזה + תלת ראשי&quot;</span><span class="s4">, </span><span class="s8">&quot;קרדיו + בטן&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;صدر+تراي&quot;</span><span class="s4">, </span><span class="s8">&quot;ظهر+باي&quot;</span><span class="s4">, </span><span class="s8">&quot;رجل&quot;</span><span class="s4">, </span><span class="s8">&quot;كتف&quot;</span><span class="s4">, </span><span class="s8">&quot;صدر+تراي&quot;</span><span class="s4">, </span><span class="s8">&quot;كارديو +معدة&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+            <span class="s0">default</span><span class="s7">:</span>
+                <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;Here are the best diets for those who train three days a week.&quot;</span><span class="s5">)</span><span class="s4">;</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;Full Body.&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;להלן המשטרים הטובים ביותר למי שמתאמן 3 ימים בשבוע.&quot;</span><span class="s5">)</span><span class="s4">;</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;אימון גוף מלא&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;هذه افضل نظم للمتدربين في 3 ايام في الاسبوع.&quot;</span><span class="s5">)</span><span class="s4">;</span>
+                    <span class="s1">schedule </span><span class="s7">= </span><span class="s0">new </span><span class="s1">String</span><span class="s3">[]</span><span class="s2">{</span><span class="s8">&quot;Full Body&quot;</span><span class="s2">}</span><span class="s4">;</span>
+                <span class="s2">}</span>
+                <span class="s0">break</span><span class="s4">;</span>
+        <span class="s2">}</span>
+
+        <span class="s9">// عرض الجدول الأسبوعي</span>
+        <span class="s0">if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;en&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;english&quot;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;✅ Here's your weekly program:&quot;</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s0">for </span><span class="s5">(</span><span class="s0">int </span><span class="s1">i </span><span class="s7">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s7">&lt; </span><span class="s1">schedule</span><span class="s4">.</span><span class="s1">length</span><span class="s4">; </span><span class="s1">i</span><span class="s7">++</span><span class="s5">) </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;Day &quot; </span><span class="s7">+ </span><span class="s5">(</span><span class="s1">i </span><span class="s7">+ </span><span class="s6">1</span><span class="s5">) </span><span class="s7">+ </span><span class="s8">&quot;: &quot; </span><span class="s7">+ </span><span class="s1">schedule</span><span class="s3">[</span><span class="s1">i</span><span class="s3">]</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s2">}</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s5">(</span><span class="s1">langCode</span><span class="s4">.</span><span class="s1">equals</span><span class="s5">(</span><span class="s8">&quot;he&quot;</span><span class="s5">)) </span><span class="s2">{  </span><span class="s9">// بدل &quot;hebrew&quot;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;✅ זו התוכנית השבועית שלך:&quot;</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s0">for </span><span class="s5">(</span><span class="s0">int </span><span class="s1">i </span><span class="s7">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s7">&lt; </span><span class="s1">schedule</span><span class="s4">.</span><span class="s1">length</span><span class="s4">; </span><span class="s1">i</span><span class="s7">++</span><span class="s5">) </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;יום &quot; </span><span class="s7">+ </span><span class="s5">(</span><span class="s1">i </span><span class="s7">+ </span><span class="s6">1</span><span class="s5">) </span><span class="s7">+ </span><span class="s8">&quot;: &quot; </span><span class="s7">+ </span><span class="s1">schedule</span><span class="s3">[</span><span class="s1">i</span><span class="s3">]</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s2">}</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;✅ هذا هو جدولك الأسبوعي:&quot;</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s0">for </span><span class="s5">(</span><span class="s0">int </span><span class="s1">i </span><span class="s7">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s7">&lt; </span><span class="s1">schedule</span><span class="s4">.</span><span class="s1">length</span><span class="s4">; </span><span class="s1">i</span><span class="s7">++</span><span class="s5">) </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s5">(</span><span class="s8">&quot;اليوم &quot; </span><span class="s7">+ </span><span class="s5">(</span><span class="s1">i </span><span class="s7">+ </span><span class="s6">1</span><span class="s5">) </span><span class="s7">+ </span><span class="s8">&quot;: &quot; </span><span class="s7">+ </span><span class="s1">schedule</span><span class="s3">[</span><span class="s1">i</span><span class="s3">]</span><span class="s5">)</span><span class="s4">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String</span><span class="s3">[] </span><span class="s1">getSchedule</span><span class="s5">() </span><span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">schedule</span><span class="s4">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

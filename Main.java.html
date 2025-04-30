@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #89ddff;}
+.s3 { color: #9abdf5;}
+.s4 { color: #7dcfff;}
+.s5 { color: #73daca;}
+.s6 { color: #7aacb7;}
+.s7 { color: #9dcc65;}
+.s8 { color: #fd914e;}
+.s9 { color: #5d6791;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s3">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s4">(</span><span class="s1">String</span><span class="s5">[] </span><span class="s1">args</span><span class="s4">) </span><span class="s3">{</span>
+
+        <span class="s1">Scanner scan </span><span class="s6">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s4">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s4">)</span><span class="s2">;</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;  Choose a language  اختار اللغة  בחר את השפה &quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;1- عربي &quot;</span><span class="s4">)</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;2-English&quot;</span><span class="s4">)</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;3-Hebrew&quot;</span><span class="s4">)</span><span class="s2">;</span>
+
+        <span class="s0">int </span><span class="s1">langChoice </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+        <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+
+        <span class="s0">int </span><span class="s1">userAction </span><span class="s6">= </span><span class="s8">0</span><span class="s2">; </span><span class="s9">// تعريف المتغير هنا</span>
+
+        <span class="s0">if </span><span class="s4">(</span><span class="s1">langChoice </span><span class="s6">== </span><span class="s8">1</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;اختار خيار يا بطل !:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;1. انشاء حساب&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;2. تسجيل الدخول &quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">userAction </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+        <span class="s3">} </span><span class="s0">else if </span><span class="s4">(</span><span class="s1">langChoice </span><span class="s6">== </span><span class="s8">2</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;Select an option:&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;1. Create Account&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;2. Login&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">userAction </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+        <span class="s3">} </span><span class="s0">else </span><span class="s3">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;בחר, גיבור :&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;1. צור חשבון&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s4">(</span><span class="s7">&quot;2. כְּנִיסָה לַמַעֲרֶכֶת&quot;</span><span class="s4">)</span><span class="s2">;</span>
+            <span class="s1">userAction </span><span class="s6">= </span><span class="s1">scan</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s4">()</span><span class="s2">;</span>
+            <span class="s1">scan</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s4">()</span><span class="s2">;</span>
+        <span class="s3">}</span>
+
+        <span class="s1">String langCode </span><span class="s6">= </span><span class="s7">&quot;&quot;</span><span class="s2">;</span>
+        <span class="s0">switch </span><span class="s4">(</span><span class="s1">langChoice</span><span class="s4">) </span><span class="s3">{</span>
+            <span class="s0">case </span><span class="s8">1</span><span class="s6">: </span><span class="s1">langCode </span><span class="s6">= </span><span class="s7">&quot;ar&quot;</span><span class="s2">; </span><span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">case </span><span class="s8">2</span><span class="s6">: </span><span class="s1">langCode </span><span class="s6">= </span><span class="s7">&quot;en&quot;</span><span class="s2">; </span><span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">case </span><span class="s8">3</span><span class="s6">: </span><span class="s1">langCode </span><span class="s6">= </span><span class="s7">&quot;he&quot;</span><span class="s2">; </span><span class="s0">break</span><span class="s2">;</span>
+            <span class="s0">default</span><span class="s6">: </span><span class="s1">langCode </span><span class="s6">= </span><span class="s7">&quot;en&quot;</span><span class="s2">; </span><span class="s0">break</span><span class="s2">;</span>
+        <span class="s3">}</span>
+
+
+        <span class="s1">LanguageHandler</span><span class="s2">.</span><span class="s1">handleLanguageChoice</span><span class="s4">(</span><span class="s1">langChoice</span><span class="s2">, </span><span class="s1">scan</span><span class="s2">, </span><span class="s1">userAction</span><span class="s2">, </span><span class="s1">langCode</span><span class="s4">)</span><span class="s2">;</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+</pre>
+</body>
+</html>

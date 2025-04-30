@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>WorkoutLibrary.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #9abdf5;}
+.s3 { color: #7dcfff;}
+.s4 { color: #89ddff;}
+.s5 { color: #9dcc65;}
+.s6 { color: #7aacb7;}
+.s7 { color: #fd914e;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WorkoutLibrary.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">WorkoutLibrary </span><span class="s2">{</span>
+
+    <span class="s0">public static void </span><span class="s1">showWorkoutByChoice</span><span class="s3">(</span><span class="s0">int </span><span class="s1">choice</span><span class="s4">, </span><span class="s1">String gender</span><span class="s4">, </span><span class="s1">String trainingType</span><span class="s4">, </span><span class="s1">String langCode</span><span class="s3">) </span><span class="s2">{</span>
+        <span class="s0">if </span><span class="s3">(</span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;أنثى&quot;</span><span class="s3">) </span><span class="s6">|| </span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;f&quot;</span><span class="s3">)) </span><span class="s2">{</span>
+            <span class="s0">switch </span><span class="s3">(</span><span class="s1">choice</span><span class="s3">) </span><span class="s2">{</span>
+                <span class="s0">case </span><span class="s7">1</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;تمارين الصدر للنساء:https://www.youtube.com/shorts/3hZU5D-a0eY &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- تمرين ضغط الصدر على الكرة&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- ضغط الصدر بالدمبل مائل&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">2</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;تمارين الظهر للنساء:https://www.youtube.com/shorts/gKjmsI1wmB4 &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- سحب أرضي&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- تمارين الأجنحة بجهاز السحب&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">3</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;تمارين الأرجل للنساء:https://www.youtube.com/shorts/HHq5PpfJ87w &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- سكوات وزن الجسم&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- الرفعة الرومانية بالدمبل&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- صعود الدرج&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">4</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;تمارين الأكتاف للنساء:https://www.youtube.com/shorts/N-zFRt39ki0 &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- رفع جانبي خفيف&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- ضغط أكتاف باستخدام دمبل خفيف&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">5</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;تمارين البطن للنساء:https://www.youtube.com/shorts/-KKfHX56OTY &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- بلانك&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- تمرين الدراجة&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">default</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;رقم التمرين غير صحيح.&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s2">}</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">switch </span><span class="s3">(</span><span class="s1">choice</span><span class="s3">) </span><span class="s2">{</span>
+                <span class="s0">case </span><span class="s7">1</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Chest Exercises: https://www.youtube.com/shorts/oBLBHKjEYn4&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bench Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- incline bench press dumbbell&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;decline chest cable&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;fly machine.&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;tri rope pushdown&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;dips machine for triceps&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">2</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Back Exercises: https://www.youtube.com/shorts/vwquyzV1rE0&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Deadlift&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Barbell Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">3</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Leg Exercises: https://www.youtube.com/shorts/E9TMx811jOI&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Squat&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;leg curl machine 1 &quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;leg curl machine  2&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;walking lunges&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;calves workout with dumbbells&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">4</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Shoulder Exercises: https://www.youtube.com/shorts/_CuJMk9TeaQ&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Shoulder Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Lateral Raise&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">case </span><span class="s7">5</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Abdominal Exercises: https://www.youtube.com/shorts/Cii54H_Xv1M&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Crunches&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Plank&quot;</span><span class="s3">)</span><span class="s4">;</span>
+                    <span class="s0">break</span><span class="s4">;</span>
+                <span class="s0">default</span><span class="s6">:</span>
+                    <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;Invalid workout number.&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">showFullBody</span><span class="s3">(</span><span class="s1">String gender</span><span class="s4">, </span><span class="s1">String trainingType</span><span class="s4">, </span><span class="s1">String langCode</span><span class="s3">) </span><span class="s2">{</span>
+        <span class="s0">if </span><span class="s3">(</span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;أنثى&quot;</span><span class="s3">) </span><span class="s6">|| </span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;f&quot;</span><span class="s3">)) </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Full Body Workout for Women: https://www.youtube.com/shorts/ShYaLk5sZeA&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bodyweight Squat&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Incline Push-up&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Glute Bridge&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Plank&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Full Body Workout: https://www.youtube.com/shorts/S3ScjXa7Z2U&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Squat&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bench Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Seated Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Shoulder Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Curl&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Crunches&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">showPushPullLegs</span><span class="s3">(</span><span class="s1">String gender</span><span class="s4">, </span><span class="s1">String trainingType</span><span class="s4">, </span><span class="s1">String langCode</span><span class="s3">) </span><span class="s2">{</span>
+        <span class="s0">if </span><span class="s3">(</span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;أنثى&quot;</span><span class="s3">) </span><span class="s6">|| </span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;f&quot;</span><span class="s3">)) </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Push (Women): https://www.youtube.com/shorts/dJayZxCOH_w&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Incline Push-up&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Shoulder Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Triceps Kickbacks&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Pull (Women): https://www.youtube.com/shorts/vYPa3bwZEzg&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Lat Pulldown&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Seated Cable Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Biceps Curl&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Legs (Women): https://www.youtube.com/shorts/phGj_ogaAl4&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Glute Bridge&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bodyweight Lunges&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Calf Raises&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Push: https://www.youtube.com/shorts/hjgFpiqUwdY&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bench Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Shoulder Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Cable Triceps Pushdown&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Pull: https://www.youtube.com/shorts/a2TMJ1HCtjM&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Seated Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Barbell Row&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Curl&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔸 Legs: https://www.youtube.com/shorts/DzKc38NKMfI&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Squat&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Lunges&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Calf Raises&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">showUpperLower</span><span class="s3">(</span><span class="s1">String gender</span><span class="s4">, </span><span class="s1">String trainingType</span><span class="s4">, </span><span class="s1">String langCode</span><span class="s3">) </span><span class="s2">{</span>
+        <span class="s0">if </span><span class="s3">(</span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;أنثى&quot;</span><span class="s3">) </span><span class="s6">|| </span><span class="s1">gender</span><span class="s4">.</span><span class="s1">equalsIgnoreCase</span><span class="s3">(</span><span class="s5">&quot;f&quot;</span><span class="s3">)) </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Upper Body (Women): https://www.youtube.com/shorts/ShYaLk5sZeA&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Incline Push-up&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Lateral Raises&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Dumbbell Curl&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Lower Body (Women): https://www.youtube.com/shorts/SQvuZNovE4Y&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bodyweight Squats&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Glute Kickbacks&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Crunches&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Upper Body: https://www.youtube.com/shorts/S3ScjXa7Z2U&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Bench Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Shoulder Press&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Biceps &amp; Triceps&quot;</span><span class="s3">)</span><span class="s4">;</span>
+
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;🔹 Lower Body: https://www.youtube.com/shorts/ny1q5XJJsME&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Squat&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Lunges&quot;</span><span class="s3">)</span><span class="s4">;</span>
+            <span class="s1">System</span><span class="s4">.</span><span class="s1">out</span><span class="s4">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;- Crunches&quot;</span><span class="s3">)</span><span class="s4">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>UserProfileManager.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #9d7cd8; font-style: italic;}
+.s1 { color: #a9b1d6;}
+.s2 { color: #89ddff;}
+.s3 { color: #7aacb7;}
+.s4 { color: #9abdf5;}
+.s5 { color: #9dcc65;}
+.s6 { color: #7dcfff;}
+.s7 { color: #73daca;}
+.s8 { color: #fd914e;}
+.s9 { color: #5d6791;}
+</style>
+</head>
+<body bgcolor="#1a1b26">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UserProfileManager.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s3">*</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s3">*</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">UserProfileManager </span><span class="s4">{</span>
+    <span class="s0">private static final </span><span class="s1">String FILE_PATH </span><span class="s3">= </span><span class="s5">&quot;userProfiles.txt&quot;</span><span class="s2">;</span>
+
+    <span class="s0">public static void </span><span class="s1">saveProfile</span><span class="s6">(</span><span class="s1">UserProfile profile</span><span class="s6">) </span><span class="s4">{</span>
+        <span class="s1">List</span><span class="s3">&lt;</span><span class="s1">String</span><span class="s3">&gt; </span><span class="s1">lines </span><span class="s3">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s3">&lt;&gt;</span><span class="s6">()</span><span class="s2">;</span>
+        <span class="s0">boolean </span><span class="s1">updated </span><span class="s3">= </span><span class="s0">false</span><span class="s2">;</span>
+
+        <span class="s0">try </span><span class="s6">(</span><span class="s1">BufferedReader reader </span><span class="s3">= </span><span class="s0">new </span><span class="s1">BufferedReader</span><span class="s6">(</span><span class="s0">new </span><span class="s1">FileReader</span><span class="s6">(</span><span class="s1">FILE_PATH</span><span class="s6">))) </span><span class="s4">{</span>
+            <span class="s1">String line</span><span class="s2">;</span>
+            <span class="s0">while </span><span class="s6">((</span><span class="s1">line </span><span class="s3">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s6">()) </span><span class="s3">!= </span><span class="s0">null</span><span class="s6">) </span><span class="s4">{</span>
+                <span class="s1">String</span><span class="s7">[] </span><span class="s1">parts </span><span class="s3">= </span><span class="s1">line</span><span class="s2">.</span><span class="s1">split</span><span class="s6">(</span><span class="s5">&quot;,&quot;</span><span class="s6">)</span><span class="s2">;</span>
+                <span class="s0">if </span><span class="s6">(</span><span class="s1">parts</span><span class="s2">.</span><span class="s1">length </span><span class="s3">&gt;= </span><span class="s8">4 </span><span class="s3">&amp;&amp; </span><span class="s1">parts</span><span class="s7">[</span><span class="s8">0</span><span class="s7">]</span><span class="s2">.</span><span class="s1">equals</span><span class="s6">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getEmail</span><span class="s6">())) </span><span class="s4">{</span>
+                    <span class="s9">// تخطي السطر القديم وتحديثه لاحقًا</span>
+                    <span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s6">()</span><span class="s2">; </span><span class="s9">// تخطي سطر الجدول</span>
+                    <span class="s1">updated </span><span class="s3">= </span><span class="s0">true</span><span class="s2">;</span>
+                    <span class="s0">continue</span><span class="s2">;</span>
+                <span class="s4">}</span>
+                <span class="s1">lines</span><span class="s2">.</span><span class="s1">add</span><span class="s6">(</span><span class="s1">line</span><span class="s6">)</span><span class="s2">; </span><span class="s9">// إضافة السطر الحالي</span>
+            <span class="s4">}</span>
+        <span class="s4">} </span><span class="s0">catch </span><span class="s6">(</span><span class="s1">IOException e</span><span class="s6">) </span><span class="s4">{</span>
+            <span class="s9">// إذا الملف مش موجود، نكمل عادي</span>
+        <span class="s4">}</span>
+
+        <span class="s9">// نضيف البيانات الجديدة للبروفايل</span>
+        <span class="s1">lines</span><span class="s2">.</span><span class="s1">add</span><span class="s6">(</span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getEmail</span><span class="s6">() </span><span class="s3">+ </span><span class="s5">&quot;,&quot; </span><span class="s3">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getGender</span><span class="s6">() </span><span class="s3">+ </span><span class="s5">&quot;,&quot; </span><span class="s3">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getTrainingType</span><span class="s6">() </span><span class="s3">+ </span><span class="s5">&quot;,&quot; </span><span class="s3">+ </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getWorkoutDays</span><span class="s6">())</span><span class="s2">;</span>
+        <span class="s1">lines</span><span class="s2">.</span><span class="s1">add</span><span class="s6">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">join</span><span class="s6">(</span><span class="s5">&quot;,&quot;</span><span class="s2">, </span><span class="s1">profile</span><span class="s2">.</span><span class="s1">getSchedule</span><span class="s6">()))</span><span class="s2">;</span>
+
+        <span class="s9">// إعادة كتابة الملف بالكامل</span>
+        <span class="s0">try </span><span class="s6">(</span><span class="s1">BufferedWriter writer </span><span class="s3">= </span><span class="s0">new </span><span class="s1">BufferedWriter</span><span class="s6">(</span><span class="s0">new </span><span class="s1">FileWriter</span><span class="s6">(</span><span class="s1">FILE_PATH</span><span class="s6">))) </span><span class="s4">{</span>
+            <span class="s0">for </span><span class="s6">(</span><span class="s1">String l </span><span class="s3">: </span><span class="s1">lines</span><span class="s6">) </span><span class="s4">{</span>
+                <span class="s1">writer</span><span class="s2">.</span><span class="s1">write</span><span class="s6">(</span><span class="s1">l</span><span class="s6">)</span><span class="s2">;</span>
+                <span class="s1">writer</span><span class="s2">.</span><span class="s1">newLine</span><span class="s6">()</span><span class="s2">;</span>
+            <span class="s4">}</span>
+        <span class="s4">} </span><span class="s0">catch </span><span class="s6">(</span><span class="s1">IOException e</span><span class="s6">) </span><span class="s4">{</span>
+            <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s6">()</span><span class="s2">;</span>
+        <span class="s4">}</span>
+
+        <span class="s0">if </span><span class="s6">(</span><span class="s1">updated</span><span class="s6">) </span><span class="s4">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s6">(</span><span class="s5">&quot;✅ تم تحديث الحساب بنجاح.&quot;</span><span class="s6">)</span><span class="s2">;</span>
+        <span class="s4">} </span><span class="s0">else </span><span class="s4">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s6">(</span><span class="s5">&quot;✅ تم إنشاء حساب جديد.&quot;</span><span class="s6">)</span><span class="s2">;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+
+    <span class="s0">public static </span><span class="s1">UserProfile loadProfile</span><span class="s6">(</span><span class="s1">String email</span><span class="s6">) </span><span class="s4">{</span>
+        <span class="s0">try </span><span class="s6">(</span><span class="s1">BufferedReader reader </span><span class="s3">= </span><span class="s0">new </span><span class="s1">BufferedReader</span><span class="s6">(</span><span class="s0">new </span><span class="s1">FileReader</span><span class="s6">(</span><span class="s1">FILE_PATH</span><span class="s6">))) </span><span class="s4">{</span>
+            <span class="s1">String line</span><span class="s2">;</span>
+
+            <span class="s0">while </span><span class="s6">((</span><span class="s1">line </span><span class="s3">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s6">()) </span><span class="s3">!= </span><span class="s0">null</span><span class="s6">) </span><span class="s4">{</span>
+                <span class="s1">String</span><span class="s7">[] </span><span class="s1">parts </span><span class="s3">= </span><span class="s1">line</span><span class="s2">.</span><span class="s1">split</span><span class="s6">(</span><span class="s5">&quot;,&quot;</span><span class="s6">)</span><span class="s2">;</span>
+                <span class="s0">if </span><span class="s6">(</span><span class="s1">parts</span><span class="s7">[</span><span class="s8">0</span><span class="s7">]</span><span class="s2">.</span><span class="s1">equals</span><span class="s6">(</span><span class="s1">email</span><span class="s6">)) </span><span class="s4">{</span>
+                    <span class="s1">String gender </span><span class="s3">= </span><span class="s1">parts</span><span class="s7">[</span><span class="s8">1</span><span class="s7">]</span><span class="s2">;</span>
+                    <span class="s1">String trainingType </span><span class="s3">= </span><span class="s1">parts</span><span class="s7">[</span><span class="s8">2</span><span class="s7">]</span><span class="s2">;</span>
+                    <span class="s0">int </span><span class="s1">workoutDays </span><span class="s3">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s6">(</span><span class="s1">parts</span><span class="s7">[</span><span class="s8">3</span><span class="s7">]</span><span class="s6">)</span><span class="s2">;</span>
+
+                    <span class="s9">// قراءة السطر التالي للجدول</span>
+                    <span class="s1">String scheduleLine </span><span class="s3">= </span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s6">()</span><span class="s2">; </span><span class="s9">// السطر التالي بعد البيانات</span>
+                    <span class="s1">String</span><span class="s7">[] </span><span class="s1">schedule </span><span class="s3">= </span><span class="s1">scheduleLine </span><span class="s3">!= </span><span class="s0">null </span><span class="s3">? </span><span class="s1">scheduleLine</span><span class="s2">.</span><span class="s1">split</span><span class="s6">(</span><span class="s5">&quot;,&quot;</span><span class="s6">) </span><span class="s3">: </span><span class="s0">new </span><span class="s1">String</span><span class="s7">[</span><span class="s8">0</span><span class="s7">]</span><span class="s2">;</span>
+
+                    <span class="s1">UserProfile profile </span><span class="s3">= </span><span class="s0">new </span><span class="s1">UserProfile</span><span class="s6">(</span><span class="s1">email</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">trainingType</span><span class="s2">, </span><span class="s1">workoutDays</span><span class="s6">)</span><span class="s2">;</span>
+                    <span class="s1">profile</span><span class="s2">.</span><span class="s1">setSchedule</span><span class="s6">(</span><span class="s1">schedule</span><span class="s6">)</span><span class="s2">;</span>
+                    <span class="s0">return </span><span class="s1">profile</span><span class="s2">;</span>
+                <span class="s4">}</span>
+            <span class="s4">}</span>
+
+        <span class="s4">} </span><span class="s0">catch </span><span class="s6">(</span><span class="s1">IOException e</span><span class="s6">) </span><span class="s4">{</span>
+            <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s6">()</span><span class="s2">;</span>
+        <span class="s4">}</span>
+
+        <span class="s0">return null</span><span class="s2">;</span>
+    <span class="s4">}</span>
+<span class="s4">}</span>
+
+
+
+
+
+
+<span class="s9">//import java.io.*;</span>
+<span class="s9">//import java.util.*;</span>
+<span class="s9">//</span>
+<span class="s9">//public class UserProfileManager {</span>
+<span class="s9">//</span>
+<span class="s9">//</span>
+<span class="s9">//    private static final String FILE_PATH = &quot;userProfiles.txt&quot;;</span>
+<span class="s9">//</span>
+<span class="s9">//    public static void saveProfile(UserProfile profile) {</span>
+<span class="s9">//        List&lt;String&gt; lines = new ArrayList&lt;&gt;();</span>
+<span class="s9">//        boolean updated = false;</span>
+<span class="s9">//</span>
+<span class="s9">//        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {</span>
+<span class="s9">//            String line;</span>
+<span class="s9">//            while ((line = reader.readLine()) != null) {</span>
+<span class="s9">//                String[] parts = line.split(&quot;,&quot;);</span>
+<span class="s9">//                if (parts.length &gt;= 4 &amp;&amp; parts[0].equals(profile.getEmail())) {</span>
+<span class="s9">//                    // تخطي السطر القديم وتحديثه لاحقًا</span>
+<span class="s9">//                    reader.readLine(); // تخطي سطر الجدول</span>
+<span class="s9">//                    updated = true;</span>
+<span class="s9">//                    continue;</span>
+<span class="s9">//                }</span>
+<span class="s9">//                lines.add(line); // إضافة السطر الحالي</span>
+<span class="s9">//            }</span>
+<span class="s9">//        } catch (IOException e) {</span>
+<span class="s9">//            // إذا الملف مش موجود، نكمل عادي</span>
+<span class="s9">//        }</span>
+<span class="s9">//</span>
+<span class="s9">//        // نضيف البيانات الجديدة للبروفايل</span>
+<span class="s9">//        lines.add(profile.getEmail() + &quot;,&quot; + profile.getGender() + &quot;,&quot; + profile.getTrainingType() + &quot;,&quot; + profile.getWorkoutDays());</span>
+<span class="s9">//        lines.add(String.join(&quot;,&quot;, profile.getSchedule()));</span>
+<span class="s9">//</span>
+<span class="s9">//        // إعادة كتابة الملف بالكامل</span>
+<span class="s9">//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {</span>
+<span class="s9">//            for (String l : lines) {</span>
+<span class="s9">//                writer.write(l);</span>
+<span class="s9">//                writer.newLine();</span>
+<span class="s9">//            }</span>
+<span class="s9">//        } catch (IOException e) {</span>
+<span class="s9">//            e.printStackTrace();</span>
+<span class="s9">//        }</span>
+<span class="s9">//</span>
+<span class="s9">//        if (updated) {</span>
+<span class="s9">//</span>
+<span class="s9">//                System.out.println(&quot;✅ تم تحديث الحساب بنجاح.&quot;);</span>
+<span class="s9">//</span>
+<span class="s9">//        } else {</span>
+<span class="s9">//            System.out.println(&quot;✅ تم إنشاء حساب جديد.&quot;);</span>
+<span class="s9">//        }</span>
+<span class="s9">//    }</span>
+<span class="s9">//</span>
+<span class="s9">//    public static UserProfile loadProfile(String email) {</span>
+<span class="s9">//        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {</span>
+<span class="s9">//            String line;</span>
+<span class="s9">//</span>
+<span class="s9">//            while ((line = reader.readLine()) != null) {</span>
+<span class="s9">//                String[] parts = line.split(&quot;,&quot;);</span>
+<span class="s9">//                if (parts[0].equals(email)) {</span>
+<span class="s9">//                    String gender = parts[1];</span>
+<span class="s9">//                    String trainingType = parts[2];</span>
+<span class="s9">//                    int workoutDays = Integer.parseInt(parts[3]);</span>
+<span class="s9">//</span>
+<span class="s9">//                    // قراءة السطر التالي للجدول</span>
+<span class="s9">//                    String scheduleLine = reader.readLine(); // السطر التالي بعد البيانات</span>
+<span class="s9">//                    String[] schedule = scheduleLine != null ? scheduleLine.split(&quot;,&quot;) : new String[0];</span>
+<span class="s9">//</span>
+<span class="s9">//                    UserProfile profile = new UserProfile(email, gender, trainingType, workoutDays);</span>
+<span class="s9">//                    profile.setSchedule(schedule);</span>
+<span class="s9">//                    return profile;</span>
+<span class="s9">//                }</span>
+<span class="s9">//            }</span>
+<span class="s9">//</span>
+<span class="s9">//        } catch (IOException e) {</span>
+<span class="s9">//            e.printStackTrace();</span>
+<span class="s9">//        }</span>
+<span class="s9">//</span>
+<span class="s9">//        return null;</span>
+<span class="s9">//    }</span>
+<span class="s9">//}</span>
+</pre>
+</body>
+</html>
